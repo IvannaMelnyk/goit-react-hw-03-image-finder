@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { animateScroll as scroll } from 'react-scroll';
+
 class Button extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
@@ -9,12 +11,7 @@ class Button extends Component {
 
   scroll = () => {
     this.props.onClick();
-    setTimeout(() => {
-      window.scrollBy({
-        top: document.documentElement.clientHeight - 130,
-        behavior: 'smooth',
-      });
-    }, 500);
+    scroll.scrollToBottom();
   };
 
   render() {
