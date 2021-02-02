@@ -1,20 +1,22 @@
-import PropTypes from 'prop-types';
 import ImageGalleryItem from '../ImageGalleryItem';
+import PropTypes from 'prop-types';
 
-function ImageGallery({ images }) {
+const ImageGallery = ({ images }) => {
   return (
-    <ul className="ImageGallery">
-      {images.map((image, index) => (
-        <ImageGalleryItem
-          src={image.webformatURL}
-          alt={image.tags}
-          largeImageUrl={image.largeImageURL}
-          key={index}
-        />
-      ))}
-    </ul>
+    <>
+      <ul className="ImageGallery">
+        {images.map((image, index) => (
+          <ImageGalleryItem
+            src={image.webformatURL}
+            alt={image.tags}
+            largeImageURL={image.largeImageURL}
+            key={index}
+          />
+        ))}
+      </ul>
+    </>
   );
-}
+};
 
 ImageGallery.propTypes = {
   images: PropTypes.array.isRequired,

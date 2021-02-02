@@ -1,15 +1,7 @@
-import PropTypes from 'prop-types';
-
-function EmptyField({ texterror }) {
+export default function EmptyField({ texterror }) {
   return (
-    <div role="alert">
-      <p>We're sorry but something went wrong: {texterror}</p>
+    <div role="alert" style={{ textAlign: 'center' }}>
+      <p>We're sorry but something went wrong {texterror}</p>
     </div>
   );
 }
-
-EmptyField.propTypes = {
-  texterror: PropTypes.string.isRequired,
-};
-
-export default EmptyField;
